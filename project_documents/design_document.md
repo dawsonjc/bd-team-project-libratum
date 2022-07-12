@@ -17,8 +17,8 @@ level of detail to aim for.*
 
 ## 1. Problem Statement
 
-*Explain clearly what problem you are trying to solve.*
-
+Create a forum for wine enthusiasts where they can post and discuss different wines they are trying in order to
+make it easier to discover new wine products and pairings for them. Also providing more knowledge for finding wine online
 
 ## 2. Top Questions to Resolve in Review
 

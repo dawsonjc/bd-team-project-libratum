@@ -1,0 +1,40 @@
+@startuml
+'https://plantuml.com/class-diagram
+title Posts
+
+class PostThread {
+    - id: String
+    - title: String
+    - posts: ArrayList<Post>
+
+    + addPost(post: Post): void
+    + getPost(index: int): Post
+}
+
+Post ..|> User
+PostThread --* Post
+
+class Post {
+    - parentPost: Post
+    - postThread: PostThread
+    - fromUser: User
+    - id: String
+    - content: String
+    - date: Date
+    - likes: int
+
+
+    + Post(user: User)
+    + Post(user: User, post: Post)
+
+    + reply(post: Post): void
+}
+
+class User {
+    - name: String
+    - id: int
+    - bio: String
+    - posts: ArrayList<Post>
+}
+
+@enduml

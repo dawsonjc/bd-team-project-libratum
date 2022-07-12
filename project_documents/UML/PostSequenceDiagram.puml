@@ -1,0 +1,18 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+title Post
+
+autonumber
+
+actor User as user
+database DB as db
+user -> PostThread : creates thread
+PostThread -> Post : first post in thread
+PostThread -> db : updates thread in database with 1 post
+    loop however many posts
+        user -> Post : posts
+        Post -> PostThread : adds to thread
+        PostThread -> db : update thread in db (ajax front end)
+    end
+@enduml
