@@ -17,8 +17,17 @@ dependencies {
 	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:9.0.64'
 	implementation 'org.springframework.boot:spring-boot-starter-freemarker'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.projectlombok:lombok:1.18.20'
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	// https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-dynamodb
+	implementation 'com.amazonaws:aws-java-sdk-dynamodb:1.12.267'
+
+	// https://mvnrepository.com/artifact/com.github.derjust/spring-data-dynamodb
+	implementation 'com.github.derjust:spring-data-dynamodb:5.1.0'
+
+
 }
 
 tasks.named('test') {
