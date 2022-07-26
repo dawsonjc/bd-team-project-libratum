@@ -30,11 +30,36 @@ class Post {
     + reply(post: Post): void
 }
 
+
+enum UserType {
+   Moderator
+   User
+   'rank System?
+}
+
 class User {
-    - name: String
+    - type: UserType
+    - username: String
+    - password: String
     - id: int
     - bio: String
     - posts: ArrayList<Post>
+    - favorites: LinkedList<Wine>
+
+    + addToFavorites(wine: Wine): boolean
 }
+class Wine {
+String name;
+String id;
+String bio;
+}
+
+class Post {}
+
+User --o UserType
+User --o Post
+User --o Wine
+
+@enduml
 
 @enduml
