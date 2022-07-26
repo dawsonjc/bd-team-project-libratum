@@ -1,0 +1,19 @@
+{
+  "wines": [
+    {
+      "PutRequest": {
+        "Item": {
+          "wine_name": {
+            "S": "Merlot"
+          },
+          "wine_id": {
+            "S": "merlot1"
+          },
+          "wine_bio": {
+            "S": "This a 2020 merlot from California"
+          }
+        }
+      }
+    }
+  ]
+}

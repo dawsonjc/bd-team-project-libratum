@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+enum UserType {
+   Moderator
+   User
+   'rank System?
+}
+
+class User {
+    - type: UserType
+    - username: String
+    - password: String
+    - id: int
+    - bio: String
+    - posts: ArrayList<Post>
+    - favorites: LinkedList<Wine>
+
+    + addToFavorites(wine: Wine): boolean
+}
+class Wine {}
+class Post {}
+
+User --o UserType
+User --o Post
+User --o Wine
+
+@enduml
