@@ -27,7 +27,8 @@ dependencies {
 	// https://mvnrepository.com/artifact/com.github.derjust/spring-data-dynamodb
 	implementation 'com.github.derjust:spring-data-dynamodb:5.1.0'
 
-
+	// https://mvnrepository.com/artifact/org.json/json
+	implementation 'org.json:json:20090211'
 }
 
 tasks.named('test') {

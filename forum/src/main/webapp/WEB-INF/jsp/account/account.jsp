@@ -7,9 +7,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>Title</title>
-</head>
+<%! private final String title = "Account"; %>
+<%@include file="../header.jsp"%>
 <body>
 
 </body>

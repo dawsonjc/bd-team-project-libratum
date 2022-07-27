@@ -54,7 +54,7 @@ public class Post {
 
     public void reply(Post post) {
         this.postThread.addPost(post);
-        this.fromUser.getPosts().add(post);
+        //this.fromUser.getPosts().add(post);
     }
 
 
