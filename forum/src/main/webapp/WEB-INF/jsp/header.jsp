@@ -12,9 +12,10 @@
     <meta charset="UTF-8">
     <meta name="viewport content="width=device-width, initial-scale="1.0">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src=""></script>
     <script src="index.js" defer></script>
     <title>Fun with JS!</title>
+
 </head>
 <body>
 <nav>

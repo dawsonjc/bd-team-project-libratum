@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping(value="/account")
 public class Account {
+
     @RequestMapping(value="registration")
     public String accountPage(Model model) {
         model.addAttribute("register_user", new Users());

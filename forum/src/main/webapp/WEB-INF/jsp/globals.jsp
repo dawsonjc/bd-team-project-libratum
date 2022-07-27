@@ -1,4 +1,5 @@
 <%@ page import="org.json.JSONObject"%>
 <%
-    JSONObject currentUser = null;
+
+    JSONObject currentUser;
 %>

@@ -1,11 +1,13 @@
 <%
-    String name = request.getParameter("name");
+    String indexParam = request.getParameter("page");
 
-    int e = 0;
-
-    class name {
-        private int getName() {
-            return 0;
+    int start = 0;
+    if(indexParam != null) {
+        int pageNum = Integer.parseInt(indexParam);
+        if(pageNum > 1) {
+            for(int i = 0; i < pageNum; i++) {
+                start += 10;
+            }
         }
     }
 
@@ -38,13 +40,9 @@
 
 <p><%= e %></p>
 <form class="card-content" id="create-playlist-form">
-    <label>Playlist Name
-        <input type="text" required class="validated-field" id="playlist-name" placeholder="smooth-jamz" autofocus>
-    </label>
-    <label>Tags
-        <input type="text" id="tags" class="tags" placeholder="tag1,tag2" data-tip="Must be a comma separated list of tags.">
-    </label>
-    <input type="submit" id="create" value="Create">
+    <div class="">
+
+    </div>
 </form>
 </body>
 </html>
