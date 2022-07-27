@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="accountSettings">
-<<<<<<< HEAD
     <option name="activeProfile" value="profile:default" />
     <option name="activeRegion" value="us-west-2" />
     <option name="recentlyUsedProfiles">
-=======
-    <option name="activeRegion" value="us-east-1" />
-    <option name="recentlyUsedProfiles">
-      <list>
-        <option value="profile:default" />
-      </list>
-    </option>
-    <option name="recentlyUsedRegions">
->>>>>>> 1078f08eb835d9f8c6f2ef6058b51ba3e04b2438
       <list>
         <option value="profile:default" />
       </list>
@@ -21,7 +11,8 @@
     <option name="recentlyUsedRegions">
       <list>
         <option value="us-west-2" />
-        </list>
+        <option value="us-east-1" />
+      </list>
     </option>
   </component>
 </project>
