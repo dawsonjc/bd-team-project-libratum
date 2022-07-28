@@ -13,12 +13,12 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+
 @Repository
 public class PostThreadDAO {
 
     @Autowired
     private DynamoDBMapper dynamoDbMapper;
-
 
     // Create
     public PostThread savePostThread(PostThread postThread) {
