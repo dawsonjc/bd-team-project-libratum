@@ -28,7 +28,7 @@ public class PostThread {
         this.title = title;
         this.posts = posts;
     }
-    
+
 
     public void addPost(Post post) {
         posts.add(post);
