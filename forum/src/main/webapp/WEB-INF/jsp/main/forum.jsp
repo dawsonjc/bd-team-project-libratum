@@ -1,3 +1,6 @@
+<%@ page import="daos.PostThreadDAO" %>
+<%@ page import="models.PostThread" %>
+<%@ include file="../globals.jsp"%>
 <%
     String indexParam = request.getParameter("page");
 
@@ -10,7 +13,7 @@
             }
         }
     }
-
+    PostThreadDAO dao = (PostThreadDAO) request.getAttribute("dao");
 %>
 
 <!DOCTYPE html>
@@ -18,31 +21,27 @@
 <%! private final String title = "Forum"; %>
 <%@include file="../header.jsp" %>
 <body>
-<h2>My Playlists</h2>
-<ul id="playlists">
-</ul>
-<h2>Create a Playlist</h2>
+
 
 <table>
     <tbody>
     <%
-        for(int i = 0; i < 10; i++) {
+        for(int i = start; i < start + 10; i++) {
+            PostThread thread = dao.findById("" + i);
     %>
-    <tr><td></td></tr>
+    <tr>
+        <td><%= thread.getId() %>%></td>
+        <td><a href=""><%= thread.getTitle() %></a></td>
+    </tr>
     <%
         }
     %>
     </tbody>
 
 </table>
+<script type="text/javascript">
+    const string = "<%= currentUser %>";
+</script>
 
 
 
-<p><%= e %></p>
-<form class="card-content" id="create-playlist-form">
-    <div class="">
-
-    </div>
-</form>
-</body>
-</html>

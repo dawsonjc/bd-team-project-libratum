@@ -56,4 +56,17 @@ public class Users {
     public String getPassword() {
         return this.password;
     }
+
+    @Override
+    public String toString() {
+        return "Users {" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", type=" + type +
+                ", bio='" + bio + '\'' +
+                ", posts=" + posts +
+                ", favorites=" + favorites +
+                '}';
+    }
 }

@@ -17,7 +17,6 @@ public class PostDAO {
     @Autowired
     private DynamoDBMapper dynamoDBMapper;
 
-
     // Create
     public Post savePost(Post post) {
         dynamoDBMapper.save(post);
