@@ -2,6 +2,7 @@ package libratum.unit5.forum.pages;
 
 import daos.PostDAO;
 import daos.PostThreadDAO;
+import libratum.unit5.forum.ForumApplication;
 import models.PostThread;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +22,7 @@ public class Post {
             @PathVariable(value = "PostThreadId") String id,
             Model model) {
 
-        PostThreadDAO dao = new PostThreadDAO();
+        PostThreadDAO dao = new PostThreadDAO(ForumApplication.getDB());
         model.addAttribute("PostThread", dao.findById(id));
 
         model.addAttribute("PostThreadId", id);

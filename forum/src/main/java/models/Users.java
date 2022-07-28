@@ -49,12 +49,24 @@ public class Users {
     public void setPassword(String password) {
         this.password = password;
     }
+    public void setType(UserType type) {
+        this.type = type;
+    }
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
 
     public String getUsername() {
         return this.username;
     }
     public String getPassword() {
         return this.password;
+    }
+    public UserType getType() {
+        return this.type;
+    }
+    public String getBio() {
+        return this.bio;
     }
 
     @Override

@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "amazon.dynamodb.endpoint",
+      "type": "java.lang.String",
+      "description": "Description for amazon.dynamodb.endpoint."
+  }
+] }
