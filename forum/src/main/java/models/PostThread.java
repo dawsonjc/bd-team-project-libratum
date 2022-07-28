@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.LinkedList;
+import java.util.List;
 
 
 @Data
@@ -23,34 +24,34 @@ public class PostThread {
     private String title;
 
     @DynamoDBAttribute
-    private LinkedList<Post> posts;
+    private List<Post> posts;
 
 
-//    public String getId() {
-//        return id;
-//    }
-//
-//    public void setId(String id) {
-//        this.id = id;
-//    }
-//
-//
-//    public String getTitle() {
-//        return title;
-//    }
-//
-//    public void setTitle(String title) {
-//        this.title = title;
-//    }
-//
-//
-//    public LinkedList<Post> getPosts() {
-//        return posts;
-//    }
-//
-//    public void setPosts(LinkedList<Post> posts) {
-//        this.posts = posts;
-//    }
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+
+    public List<Post> getPosts() {
+        return new LinkedList<>(posts);
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
+    }
 
     public void addPost(Post post) {
         posts.add(post);

@@ -26,7 +26,7 @@ public class Post {
 
     private Date date;
 
-    private int likes;
+    private Integer likes;
 
 
     public Post(Users fromUser) {

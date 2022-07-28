@@ -8,6 +8,7 @@ import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
@@ -20,7 +21,8 @@ public class DynamoDBConfig {
 
     @Bean
     public AmazonDynamoDB amazonDynamoDB() {
-        AmazonDynamoDB amazonDynamoDB = AmazonDynamoDBClient.builder()
+        AmazonDynamoDB amazonDynamoDB = AmazonDynamoDBClientBuilder
+                .standard()
                 .withCredentials(
                         new AWSStaticCredentialsProvider(
                                 amazonAWSCredentials()

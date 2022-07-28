@@ -27,11 +27,11 @@
     <tbody>
     <%
         for(int i = start; i < start + 10; i++) {
-            PostThread thread = dao.findById("" + i);
+            //PostThread thread = dao.findById("" + i);
     %>
     <tr>
-        <td><%= thread.getId() %>%></td>
-        <td><a href=""><%= thread.getTitle() %></a></td>
+        <td>2</td>
+        <td><a href="">1</a></td>
     </tr>
     <%
         }

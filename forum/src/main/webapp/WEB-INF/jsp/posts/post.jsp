@@ -16,23 +16,26 @@
 <%@ include file="../header.jsp"%>
 <body>
 <table>
+    <tbody>
     <tr>
-        <tr>
-            <% for(int i = 1; i < posts.size(); i++) { %>
-                <% Post currentPost = posts.get(i); %>
-            <td><%= currentPost.getFromUser() %><br> <%= currentPost.getDate() %></td>
-            <td><%= currentPost.getContent() %></td>
-            <td><%= currentPost.getLikes() %></td>
-        </tr>
-        <tr>
-            <td>likes: <button>like</button></td>
-            <td>reply: <button>reply</button></td>
-        </tr>
+    <tr>
+        <% for(int i = 1; i < posts.size(); i++) { %>
+        <% Post currentPost = posts.get(i); %>
+        <td><%= currentPost.getFromUser() %><br> <%= currentPost.getDate() %></td>
+        <td><%= currentPost.getContent() %></td>
+        <td><%= currentPost.getLikes() %></td>
     </tr>
-        <%}%>
+    <tr>
+        <td>likes: <button>like</button></td>
+        <td>reply: <button>reply</button></td>
+    </tr>
+
+    <%}%>
     <tr>
         <td><h3>posts.get(1)></h3></td>
     </tr>
+    </tbody>
+
 
 
 

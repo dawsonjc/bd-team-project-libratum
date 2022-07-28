@@ -34,7 +34,12 @@ public class PostThreadDAO {
     // Read
 
     public PostThread findById(String id) {
-        return dynamoDbMapper.load(PostThread.class, id);
+        try {
+            return dynamoDbMapper.load(PostThread.class, id);
+        } catch(Exception e) {
+            return null;
+        }
+
     }
 
     public List<PostThread> findAll() {
