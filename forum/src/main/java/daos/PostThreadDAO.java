@@ -7,9 +7,12 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.dynamodbv2.model.ExpectedAttributeValue;
 import models.PostThread;
-import models.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import com.amazonaws.regions.Regions;
+
+
 
 import java.util.List;
 
@@ -20,11 +23,14 @@ public class PostThreadDAO {
     @Autowired
     private DynamoDBMapper dynamoDbMapper;
 
+
     // Create
     public PostThread savePostThread(PostThread postThread) {
         dynamoDbMapper.save(postThread);
         return postThread;
     }
+
+
 
     // Read
 
