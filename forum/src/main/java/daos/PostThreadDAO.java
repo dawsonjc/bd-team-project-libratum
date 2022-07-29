@@ -1,13 +1,13 @@
 package daos;
 
 
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBSaveExpression;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.dynamodbv2.model.ExpectedAttributeValue;
 import models.PostThread;
-import models.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -19,6 +19,9 @@ public class PostThreadDAO {
     @Autowired
     private DynamoDBMapper dynamoDbMapper;
 
+    public PostThreadDAO(AmazonDynamoDB client) {
+        this.dynamoDbMapper = new DynamoDBMapper(client);
+    }
 
     // Create
     public PostThread savePostThread(PostThread postThread) {
@@ -26,10 +29,17 @@ public class PostThreadDAO {
         return postThread;
     }
 
+
+
     // Read
 
     public PostThread findById(String id) {
-        return dynamoDbMapper.load(PostThread.class, id);
+        try {
+            return dynamoDbMapper.load(PostThread.class, id);
+        } catch(Exception e) {
+            return null;
+        }
+
     }
 
     public List<PostThread> findAll() {

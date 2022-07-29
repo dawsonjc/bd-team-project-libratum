@@ -79,10 +79,46 @@ the first endpoint)*
 
 # 7. Tables
 
-POSTTHREAD
-POST
-USER
-WINE
+1. POSTTHREAD
+2. POST
+3. USER
+4. WINE
+
+## Data Model
+This section maps the attributes of our tables, with the corresponding DDB type.
+
+```markdown
+    post_thread
+  
+    id // partition key, string
+    title // string
+    post // list
+    
+```
+
+```markdown
+    posts
+  
+    parentPost // partition key, Post
+    postThread // PostThread
+    fromUser // User
+    id// string
+    content// string
+    date// date
+    likes// int
+
+```
+
+```markdown
+    users
+  
+    id // partition key, int
+    name // string
+    bio // string
+    posts// list
+
+```
+
 
 # 8. Pages
 

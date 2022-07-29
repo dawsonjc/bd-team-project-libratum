@@ -1,0 +1,154 @@
+{
+  "wines": [
+    {
+      "PutRequest": {
+        "Item": {
+          "wine_name": {
+            "S": "Merlot"
+          },
+          "wine_id": {
+            "S": "merlot1"
+          },
+          "wine_bio": {
+            "S": "Duckhorn Vineyards Merlot, Napa Valley"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "wine_name": {
+            "S": "Zinfandel"
+          },
+          "wine_id": {
+            "S": "zinfandel1"
+          },
+          "wine_bio": {
+            "S": "A. Rafaneli Zifandel, Sonoma County"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "wine_name": {
+            "S": "Moscato"
+          },
+          "wine_id": {
+            "S": "moscato1"
+          },
+          "wine_bio": {
+            "S": "Risata Moscato D'Asti"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "wine_name": {
+            "S": "Cabernet Sauvignon"
+          },
+          "wine_id": {
+            "S": "cabernetsauv1"
+          },
+          "wine_bio": {
+            "S": "Chateau Buena Vista, Cabernet Sauvignon 2018 | Napa Valley"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "wine_name": {
+            "S": "Chardonnay"
+          },
+          "wine_id": {
+            "S": "chardonnay"
+          },
+          "wine_bio": {
+            "S": "Diora 2019 La Splendeur du Soleil Chardonnay"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "wine_name": {
+            "S": "Riesling"
+          },
+          "wine_id": {
+            "S": "riesling"
+          },
+          "wine_bio": {
+            "S": "Keller Riesling Hipping 2018"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "wine_name": {
+            "S": "Pinot Noir"
+          },
+          "wine_id": {
+            "S": "pinotnoir1"
+          },
+          "wine_bio": {
+            "S": "Belle Glos 2019 Las Alturas Pinot Noir"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "wine_name": {
+            "S": "Pinot Grigio"
+          },
+          "wine_id": {
+            "S": "pinotgrigio1"
+          },
+          "wine_bio": {
+            "S": "Santa Margherita Pinot Grigio Alto Adige, Trentino-Alto Adige, Italy"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "wine_name": {
+            "S": "Sauvignon Blanc"
+          },
+          "wine_id": {
+            "S": "sauvignonblanc1"
+          },
+          "wine_bio": {
+            "S": "Domaine du Salvard Cheverny Blanc 2020"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "wine_name": {
+            "S": "Red Blend"
+          },
+          "wine_id": {
+            "S": "redblend1"
+          },
+          "wine_bio": {
+            "S": "Ace Kicker ‘Big Bet’ Blend 2017"
+          }
+        }
+      }
+    }
+  ]
+}

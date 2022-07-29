@@ -1,54 +1,47 @@
+<%@ page import="daos.PostThreadDAO" %>
+<%@ page import="models.PostThread" %>
+<%@ include file="../globals.jsp"%>
 <%
-    String name = request.getParameter("name");
+    String indexParam = request.getParameter("page");
 
-    int e = 0;
-
-    class name {
-        private int getName() {
-            return 0;
+    int start = 0;
+    if(indexParam != null) {
+        int pageNum = Integer.parseInt(indexParam);
+        if(pageNum > 1) {
+            for(int i = 0; i < pageNum; i++) {
+                start += 10;
+            }
         }
     }
-
+    PostThreadDAO dao = (PostThreadDAO) request.getAttribute("dao");
 %>
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport content="width=device-width, initial-scale="1.0">
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="index.js" defer></script>
-    <title>Fun with JS!</title>
-</head>
+<%! private final String title = "Forum"; %>
+<%@include file="../header.jsp" %>
 <body>
-<h2>My Playlists</h2>
-<ul id="playlists">
-</ul>
-<%= new name().getName() %>
-<h2>Create a Playlist</h2>
+
 
 <table>
+    <tbody>
     <%
-        for(int i = 0; i < 10; i++) {
+        for(int i = start; i < start + 10; i++) {
+            //PostThread thread = dao.findById("" + i);
     %>
-    <tr><td></td></tr>
+    <tr>
+        <td>2</td>
+        <td><a href="">1</a></td>
+    </tr>
     <%
         }
     %>
+    </tbody>
+
 </table>
+<script type="text/javascript">
+    const string = "<%= currentUser %>";
+</script>
 
 
 
-<p><%= e %></p>
-<form class="card-content" id="create-playlist-form">
-    <label>Playlist Name
-        <input type="text" required class="validated-field" id="playlist-name" placeholder="smooth-jamz" autofocus>
-    </label>
-    <label>Tags
-        <input type="text" id="tags" class="tags" placeholder="tag1,tag2" data-tip="Must be a comma separated list of tags.">
-    </label>
-    <input type="submit" id="create" value="Create">
-</form>
-</body>
-</html>

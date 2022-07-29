@@ -14,19 +14,8 @@ import java.security.Principal;
 @Controller
 public class Test {
 
-    @RequestMapping(value="/")
-    public String forum(Model model) {
-        return "main/forum";
-    }
-
-    @GetMapping(value = "/account")
-    public String account(Model model) {
-        return "account";
-    }
-
-    @PostMapping(value = "/account/create")
-    public String create(@ModelAttribute(value="User") User user) {
-
-        return "role";
+    @RequestMapping(value = "/myerror")
+    public String errorPage() {
+        return "This is a big error page";
     }
 }

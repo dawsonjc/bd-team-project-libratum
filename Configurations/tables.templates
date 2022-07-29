@@ -1,0 +1,102 @@
+Resources:
+  UserTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      AttributeDefinitions:
+        - AttributeName: user_id
+          AttributeType: S
+        - AttributeName: user_name
+          AttributeType: S
+
+      KeySchema:
+        - AttributeName: user_id
+          KeyType: HASH
+        - AttributeName: user_name
+          KeyType: RANGE
+      BillingMode: PAY_PER_REQUEST
+      TableName: user
+
+
+  PostTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      AttributeDefinitions:
+        - AttributeName: user_id
+          AttributeType: S
+        - AttributeName: author_post_id
+          AttributeType: S
+
+        #- AttributeName: content
+          #AttributeType: S
+        #- AttributeName: date
+          #AttributeType: S
+        #- AttributeName: likes
+          #AttributeType: N
+      KeySchema:
+        - AttributeName: user_id
+          KeyType: HASH
+        - AttributeName: author_post_id
+          KeyType: RANGE
+      BillingMode: PAY_PER_REQUEST
+      TableName: posts
+
+  PostThreadsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+
+        #- AttributeName: title
+          #AttributeType: S
+        #- AttributeName: post
+          #AttributeType: S
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+      BillingMode: PAY_PER_REQUEST
+      TableName: post_thread
+
+  ReplyTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      AttributeDefinitions:
+        - AttributeName: author_post_id
+          AttributeType: S
+        - AttributeName: user_id
+          AttributeType: S
+
+        #- AttributeName: reply_id
+          #AttributeType: S
+        #- AttributeName: content
+          #AttributeType: S
+        #- AttributeName: date
+          #AttributeType: S
+        # AttributeName: likes
+          #AttributeType: N
+      KeySchema:
+        - AttributeName: author_post_id
+          KeyType: HASH
+        - AttributeName: user_id
+          KeyType: RANGE
+      BillingMode: PAY_PER_REQUEST
+      TableName: replies
+
+  WineTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      AttributeDefinitions:
+        - AttributeName: wine_id
+          AttributeType: S
+        - AttributeName: wine_name
+          AttributeType: S
+
+      KeySchema:
+        - AttributeName: wine_id
+          KeyType: HASH
+        - AttributeName: wine_name
+          KeyType: RANGE
+      BillingMode: PAY_PER_REQUEST
+      TableName: wines
+
+
