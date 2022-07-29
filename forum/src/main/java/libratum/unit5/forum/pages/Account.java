@@ -1,9 +1,12 @@
 package libratum.unit5.forum.pages;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTypeConverted;
 import daos.UsersDAO;
 import libratum.unit5.forum.ForumApplication;
 import models.UserType;
 import models.Users;
+import models.converter.ConverterForUser;
+import models.converter.ListConverterForPost;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -25,11 +28,13 @@ public class Account {
     }
 
     @PostMapping(value = "register")
+    @DynamoDBTypeConverted(converter = ConverterForUser.class)
     public String registerUser(Model model,
                                RedirectAttributes redirectAttributes,
                                @ModelAttribute(value = "register_user") Users user
     ) {
         UsersDAO dao = new UsersDAO(ForumApplication.getDB());
+
 
         user.setFavorites(new ArrayList<models.Wine>());
         user.setPosts(new ArrayList<models.Post>());

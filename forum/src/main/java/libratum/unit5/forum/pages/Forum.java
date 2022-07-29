@@ -1,6 +1,5 @@
 package libratum.unit5.forum.pages;
 
-import daos.DynamoDBConfig;
 import daos.PostThreadDAO;
 import libratum.unit5.forum.ForumApplication;
 import org.springframework.stereotype.Controller;

@@ -1,4 +1,4 @@
-package daos;
+package config;
 
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
@@ -30,8 +30,10 @@ public class DynamoDBConfig {
                 )
                 .withEndpointConfiguration(
                         new AwsClientBuilder.EndpointConfiguration(
-                                "http://localhost:8080/",
-                                Regions.US_WEST_2.toString()
+                                "dynamodb.us-west-2.amazonaws.com",
+                                "us-west-2"
+
+
                         )
                 )
                 .build();

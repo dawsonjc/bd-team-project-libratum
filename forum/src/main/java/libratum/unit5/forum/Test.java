@@ -14,8 +14,8 @@ import java.security.Principal;
 @Controller
 public class Test {
 
-    @RequestMapping(value = "/eror")
+    @RequestMapping(value = "/myerror")
     public String errorPage() {
-        return "This is a big errogr pae";
+        return "This is a big error page";
     }
 }

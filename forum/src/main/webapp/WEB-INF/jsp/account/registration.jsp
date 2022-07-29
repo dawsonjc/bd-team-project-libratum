@@ -24,7 +24,7 @@
         <td>
             <form:form action="${pageContext.request.contextPath}/account/register" method="post" modelAttribute="register_user">
                 <form:label path="username">Username</form:label>
-                <form:input path="username" placeholder="usernmae"/>
+                <form:input path="username" placeholder="username"/>
 
                 <form:label path="password">Password</form:label>
                 <form:input path="password" type="password" />
@@ -37,7 +37,7 @@
         <td>
             <form:form action="${pageContext.request.contextPath}/account/login" method="post" modelAttribute="login_user">
                 <form:label path="username">Username</form:label>
-                <form:input path="username" placeholder="usernmae"/>
+                <form:input path="username" placeholder="username"/>
 
                 <form:label path="password">Password</form:label>
                 <form:input path="password" type="password" />

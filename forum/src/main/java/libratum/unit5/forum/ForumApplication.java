@@ -1,7 +1,7 @@
 package libratum.unit5.forum;
 
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
-import daos.DynamoDBConfig;
+import config.DynamoDBConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
