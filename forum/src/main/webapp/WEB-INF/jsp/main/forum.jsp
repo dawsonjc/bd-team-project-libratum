@@ -3,7 +3,6 @@
 <%@ page import="daos.PostThreadDAO" %>
 <%@ include file="../globals.jsp"%>
 <%
-
     String indexParam = request.getParameter("the_page");
 
     int start = 0;
@@ -27,7 +26,7 @@
 
 <script type="text/javascript">
     function validate() {
-        let valid = "<%= (currentUser == null) %>";
+        let valid = Boolean(<%= (currentUser == null) %>);
         if(valid) {
             alert("You need to login to post!");
             return true;
@@ -38,7 +37,6 @@
 
 <h3>CREATE NEW THREAD!</h3>
 <form action="${pageContext.request.contextPath}/thread/create-thread" method="post" onsubmit="return validate()">
-
 
     <label for="title">Title</label>
     <input id="title" name="title" type="text"/>

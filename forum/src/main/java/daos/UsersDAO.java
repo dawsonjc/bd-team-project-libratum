@@ -32,8 +32,8 @@ public class UsersDAO {
 
     // Read
 
-    public Users findById(String id) {
-        return dynamoDBMapper.load(Users.class, id);
+    public Users findByUsername(String username) {
+        return dynamoDBMapper.load(Users.class, username);
     }
 
     public List<Users> findALL() {

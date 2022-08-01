@@ -16,6 +16,15 @@
 <% final String title = thread.getTitle(); %>
 <%@ include file="../header.jsp"%>
 <body>
+<script type="text/javascript">
+    function like(id) {
+        $.ajax(
+
+
+        )
+    }
+</script>
+
 <table>
     <tbody>
         <tr>
@@ -53,7 +62,7 @@
             <td><%= currentPost.getLikes() %></td>
         </tr>
         <tr>
-            <td>likes: <button>like</button></td>
+            <td>likes: <button onclick="like(<%= i %>)">like</button></td>
             <td>reply: <button>reply</button></td>
         </tr>
 

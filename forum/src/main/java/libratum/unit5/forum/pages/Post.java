@@ -40,6 +40,7 @@ public class Post {
         System.out.println(title);
         System.out.println(postContent);
         PostThread thread = new PostThread();
+
         thread.setTitle(title);
 
         models.Post post = new models.Post();
@@ -54,6 +55,9 @@ public class Post {
         posts.add(post);
         thread.setPosts(posts);
 
-        return "redirect:/";
+        PostThreadDAO dao = new PostThreadDAO(ForumApplication.getDB());
+        dao.savePostThread(thread);
+
+        return "redirect:/thread/thread-" + thread.getId();
     }
 }
