@@ -16,33 +16,28 @@
 <% final String title = thread.getTitle(); %>
 <%@ include file="../header.jsp"%>
 <body>
-<script type="text/javascript">
-    function like(id) {
-        $.ajax(
-
-
-        )
-    }
-</script>
-
-<table>
-    <tbody>
+<script src="<%= request.getContextPath() %>/static/js/post.js"></script>
+<table id="postThreadTable">
+    <thead>
         <tr>
             <td>
                 <table>
                     <tbody>
-                        <tr>
-                            <td><h3><%= thread.getTitle() %></h3></td>
-                            <td><%= thread.getPost(0).getFromUser().getUsername() %></td>
-                        </tr>
-                        <tr>
-                            <td><%= thread.getPost(0).getContent() %></td>
-                        </tr>
+                    <tr>
+                        <td><h3><%= thread.getTitle() %></h3></td>
+                        <td><%= thread.getPost(0).getFromUser().getUsername() %></td>
+                    </tr>
+                    <tr>
+                        <td><%= thread.getPost(0).getContent() %></td>
+                    </tr>
                     </tbody>
                 </table>
             </td>
         </tr>
-        <% for(int i = 1; i < posts.size(); i++) {
+    </thead>
+    <tbody>
+        <%
+            for(int i = 1; i < posts.size(); i++) {
               Post currentPost = posts.get(i);
         %>
         <tr>
@@ -50,22 +45,29 @@
                 <table>
                     <tbody>
                         <tr>
-                            <td><%= currentPost.getFromUser() %></td>
+                            <td>
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <td><%= currentPost.getFromUser() %></td>
+                                    </tr>
+                                    <tr>
+                                        <td><%= currentPost.getDate() %></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td><%= currentPost.getContent() %></td>
+                            <td><%= currentPost.getLikes() %></td>
                         </tr>
                         <tr>
-                            <td><%= currentPost.getDate() %></td>
+                            <td>like: <button onclick="like(<%= i %>)">like</button></td>
+                            <td>reply: <button class="reply" id="<%= i %>">reply</button></td>
                         </tr>
                     </tbody>
                 </table>
             </td>
-            <td><%= currentPost.getContent() %></td>
-            <td><%= currentPost.getLikes() %></td>
         </tr>
-        <tr>
-            <td>likes: <button onclick="like(<%= i %>)">like</button></td>
-            <td>reply: <button>reply</button></td>
-        </tr>
-
         <% } %>
     </tbody>
 </table>

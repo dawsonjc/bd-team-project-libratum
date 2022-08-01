@@ -1,4 +1,4 @@
 package exceptions;
 
-public class PostNotFoundException {
+public class PostNotFoundException extends RuntimeException {
 }

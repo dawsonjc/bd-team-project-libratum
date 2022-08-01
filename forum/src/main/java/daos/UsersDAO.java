@@ -41,6 +41,13 @@ public class UsersDAO {
     }
 
     // Update
+
+    /**
+     * Might be unsafe.
+     * @param id - user_id
+     * @param user - the user
+     * @return status update
+     */
     public String update(String id, Users user) {
         dynamoDBMapper.save(user, new DynamoDBSaveExpression()
                 .withExpectedEntry("id",

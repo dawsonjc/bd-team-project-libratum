@@ -35,6 +35,8 @@
     }
 </script>
 
+
+
 <h3>CREATE NEW THREAD!</h3>
 <form action="${pageContext.request.contextPath}/thread/create-thread" method="post" onsubmit="return validate()">
 

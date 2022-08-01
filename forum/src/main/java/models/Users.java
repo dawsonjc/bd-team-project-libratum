@@ -125,7 +125,7 @@ public class Users {
     }
 
     public String toJSObject() {
-        return "{" +
+        return '{' +
                     "id:" + id +
                     ", username:'" + username + '\'' +
                     ", password:'" + password + '\'' +
