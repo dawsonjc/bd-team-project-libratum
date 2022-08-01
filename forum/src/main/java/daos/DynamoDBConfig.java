@@ -30,7 +30,7 @@ public class DynamoDBConfig {
                 )
                 .withEndpointConfiguration(
                         new AwsClientBuilder.EndpointConfiguration(
-                                "http://localhost:8080/",
+                                "http://localhost:8080/db",
                                 Regions.US_WEST_2.toString()
                         )
                 )

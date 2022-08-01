@@ -28,7 +28,6 @@ public class Post {
 
     private Integer likes;
 
-
     public Post(Users fromUser) {
         this.fromUser = fromUser;
     }

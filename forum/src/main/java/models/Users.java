@@ -122,4 +122,16 @@ public class Users {
                 ", favorites=" + favorites +
                 '}';
     }
+
+    public String toJSObject() {
+        return "{" +
+                    "id:" + id +
+                    ", username:'" + username + '\'' +
+                    ", password:'" + password + '\'' +
+                    ", type:" + type +
+                    ", bio:'" + bio + '\'' +
+                    ", posts:" + posts +
+                    ", favorites:" + favorites +
+                '}';
+    }
 }

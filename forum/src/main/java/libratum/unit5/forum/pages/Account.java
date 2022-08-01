@@ -53,6 +53,9 @@ public class Account {
 
     @RequestMapping(value="")
     public String account(@ModelAttribute(value = "current_user") Users user) {
+        if(user.getId() == null) {
+            return "redirect:/account/registration";
+        }
         return "account/account";
     }
 
