@@ -16,8 +16,7 @@ import java.util.List;
 @Repository
 public class PostThreadDAO {
 
-    @Autowired
-    private DynamoDBMapper dynamoDbMapper;
+    private final DynamoDBMapper dynamoDbMapper;
 
     public PostThreadDAO(AmazonDynamoDB client) {
         this.dynamoDbMapper = new DynamoDBMapper(client);
@@ -30,16 +29,14 @@ public class PostThreadDAO {
     }
 
 
-
-    // Read
-
     public PostThread findById(String id) {
+        PostThread thread = null;
         try {
-            return dynamoDbMapper.load(PostThread.class, id);
+            thread = dynamoDbMapper.load(PostThread.class, id);
         } catch(Exception e) {
             return null;
         }
-
+        return thread;
     }
 
     public List<PostThread> findAll() {

@@ -9,10 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class Forum {
 
-    private final PostThreadDAO dao = new PostThreadDAO(ForumApplication.getDB());
-    @RequestMapping(value="/")
+    private static final PostThreadDAO dao = new PostThreadDAO(ForumApplication.getDB());
+
+    @RequestMapping(value = "/")
     public String forum(Model model) {
-        model.addAttribute("dao", this.dao);
+        model.addAttribute("dao", dao);
         return "main/forum";
     }
 

@@ -36,8 +36,8 @@ public class UsersDAO {
 
     // Read
 
-    public Users findById(String id) {
-        return dynamoDBMapper.load(Users.class, id);
+    public Users findByUsername(String username) {
+        return dynamoDBMapper.load(Users.class, username);
     }
 
     public List<Users> findALL() {
@@ -45,6 +45,13 @@ public class UsersDAO {
     }
 
     // Update
+
+    /**
+     * Might be unsafe.
+     * @param id - user_id
+     * @param user - the user
+     * @return status update
+     */
     public String update(String id, Users user) {
         dynamoDBMapper.save(user, new DynamoDBSaveExpression()
                 .withExpectedEntry("id",

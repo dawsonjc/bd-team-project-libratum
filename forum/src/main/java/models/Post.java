@@ -28,7 +28,6 @@ public class Post {
 
     private Integer likes;
 
-
     public Post(Users fromUser) {
         this.fromUser = fromUser;
     }
@@ -41,11 +40,10 @@ public class Post {
     public Post() {
     }
 
-    public Post(Post parentPost, PostThread postThread, Users fromUser, String id, String content, Date date, int likes) {
+    public Post(Post parentPost, PostThread postThread, Users fromUser, String content, Date date, int likes) {
         this.parentPost = parentPost;
         this.postThread = postThread;
         this.fromUser = fromUser;
-        this.id = id;
         this.content = content;
         this.date = date;
         this.likes = likes;

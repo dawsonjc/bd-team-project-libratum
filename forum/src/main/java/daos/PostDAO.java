@@ -1,5 +1,6 @@
 package daos;
 
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBSaveExpression;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression;
@@ -14,8 +15,13 @@ import java.util.List;
 
 @Repository
 public class PostDAO {
-    @Autowired
-    private DynamoDBMapper dynamoDBMapper;
+
+
+    private final DynamoDBMapper dynamoDBMapper;
+
+    public PostDAO(AmazonDynamoDB client) {
+        this.dynamoDBMapper = new DynamoDBMapper(client);
+    }
 
     // Create
     public Post savePost(Post post) {
