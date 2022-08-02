@@ -1,4 +1,4 @@
-package daos;
+package config;
 
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSStaticCredentialsProvider;

@@ -27,7 +27,6 @@ public class Post {
             @PathVariable(value = "PostThreadId") String id,
             Model model) {
 
-        PostThreadDAO dao = new PostThreadDAO(ForumApplication.getDB());
         model.addAttribute("PostThread", this.postThreadDAO.findById(id));
 
         model.addAttribute("PostThreadId", id);
@@ -102,6 +101,7 @@ public class Post {
 
         return "redirect:/thread/thread-" + thread.getId();
     }
+
 
 
 }

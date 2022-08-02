@@ -1,33 +1,49 @@
-/**
- * I want to die
- *
- */
-const table =
+var state = false;
+
+function openForm() {
+    $("reply").css("display", "block");
+    state = true;
+}
+
+function closeForm() {
+    $("reply").css("display", "none");
+    state = false;
+}
+
+var postContent = "";
 
 $(".reply").click(function() {
-    let id = this.attr("id");
+    if(!state) {
+        openForm();
+    } else {
+        closeForm();
+    }
+});
 
-    let postContent = "";
 
-    let link = window.location.href + "/post"
-    $.post(link, {
-            postId: id,
-            content: postContent
-        }, function(data, status) {
+$(".postReply").submit(function(e) {
+    e.preventDefault();
+
+    let link = window.location.href + "/post";
+    $.post(link, $(this).serialize(), function(data, status) {
             if(status === "ok") {
                 let response = data.response;
 
+                let postThread = $("#postThreadTable tbody");
+
+                let lastNumber = parseInt(postThread.last()) + 1;
+
                 console.log(response);
-                let newPost = $("<tr>").append(createTable(response, postContent));
-                $("#postThreadTable tbody").append(newPost);
+                let newPost = $("<tr>").append(
+                    $(createTable(response, postContent, lastNumber))
+                );
+                postThread.append(newPost);
             }
         }
     )
-
-
 });
 
-function createTable(data, postContent) {
+function createTable(data, postContent, lastNumber) {
     return `
             <table>
                 <tbody>
@@ -36,20 +52,30 @@ function createTable(data, postContent) {
                             <table>
                                 <tbody>
                                 <tr>
-                                    <td>\${data.fromUser.username}</td>
+                                    <td>${data.fromUser.username}</td>
                                 </tr>
                                 <tr>
-                                    <td>\${new Date()}}</td>
+                                    <td>${new Date()}</td>
                                 </tr>
                                 </tbody>
                             </table>
                         </td>
-                        <td>\${postContent}</td>
+                        <td>${postContent}</td>
                         <td>0</td>
                     </tr>
                     <tr>
-                        <td>like: <button onclick="like(1)">like</button></td>
-                        <td>reply: <button class="reply" id="1">reply</button></td>
+                        <td>like: <button onclick="like(${lastNumber})">like</button></td>
+                        <td>reply: <button class="reply" id="${lastNumber}">reply</button></td>
+                        <td>
+                            <form class="postReply">
+                                <input type="hidden" name="postId" value="${lastNumber}">
+                                
+                                <label for="content">Text</label>
+                                <input id="content" name="content" type="text" >
+                                
+                                <button type="submit">Post Reply</button>
+                            </form>
+                        </td>
                     </tr>
                 </tbody>
             </table>

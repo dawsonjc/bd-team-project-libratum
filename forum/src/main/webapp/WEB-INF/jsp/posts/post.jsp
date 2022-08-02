@@ -61,8 +61,18 @@
                             <td><%= currentPost.getLikes() %></td>
                         </tr>
                         <tr>
-                            <td>like: <button onclick="like(<%= i %>)">like</button></td>
-                            <td>reply: <button class="reply" id="<%= i %>">reply</button></td>
+                            <td><button onclick="like(<%= i %>)">like</button></td>
+                            <td><button class="reply" id="<%= i %>">reply</button></td>
+                            <td>
+                                <form class="postReply">
+                                    <input type="hidden" name="postId" value="<%= i %>">
+
+                                    <label for="content">Text</label>
+                                    <input id="content" name="content" type="text" >
+
+                                    <button type="submit">Post Reply</button>
+                                </form>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

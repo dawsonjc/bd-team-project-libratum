@@ -16,6 +16,7 @@ import java.util.List;
 @Repository
 public class PostDAO {
 
+
     private final DynamoDBMapper dynamoDBMapper;
 
     public PostDAO(AmazonDynamoDB client) {
