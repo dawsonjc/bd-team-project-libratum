@@ -3,6 +3,8 @@ package models;
 import com.amazonaws.services.dynamodbv2.datamodeling.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import models.converter.ConverterForUser;
 import models.converter.ListConverterForPost;
 import models.converter.ListConverterForWine;
@@ -10,7 +12,8 @@ import models.converter.ListConverterForWine;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @DynamoDBTable(tableName = "user")
 

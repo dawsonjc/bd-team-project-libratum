@@ -51,7 +51,6 @@ public class Post {
         }
 
         models.Post post = new models.Post(
-                this.dao.findById(postId),
                 thread,
                 currentUser,
                 content,
@@ -85,7 +84,6 @@ public class Post {
         thread.setTitle(title);
 
         models.Post post = new models.Post();
-        post.setParentPost(null);
         post.setPostThread(thread);
         post.setFromUser(user);
         post.setContent(postContent);
