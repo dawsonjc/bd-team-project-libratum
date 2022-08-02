@@ -28,39 +28,32 @@ $(".reply").click(function() {
 });
 
 function createTable(data, postContent) {
-    return $("<table>").append(
-        $("<tbody>").append(
-            $("<tr>").append(
-                $("<td>").append(
-                    $("<table>").append(
-                        $("<tbody>").append(
-                            $("<tr>").append(
-                                $("<td>").html(`\${data.fromUser.username}`)
-                            )
-                        ).append(
-                            $("<tr>").append(
-                                $("<td>").html(`\${new Date()}`)
-                            )
-                        )
-                    )
-                )
-            ).append(
-                $("<td>").html(`\${postContent}`)
-            ).append(
-                $("<td>").html(0)
-            )
-        ).append(
-            $("<tr>").append(
-                $("<td>").append(
-                    $("<button>", { onclick:"like(1)" }).html("Like")
-                )
-            ).append(
-                $("<td>").append(
-                    $("<button>", { class:"reply", id:"1" }).html("reply")
-                )
-            )
-        )
-    );
+    return `
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td>\${data.fromUser.username}</td>
+                                </tr>
+                                <tr>
+                                    <td>\${new Date()}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td>\${postContent}</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>like: <button onclick="like(1)">like</button></td>
+                        <td>reply: <button class="reply" id="1">reply</button></td>
+                    </tr>
+                </tbody>
+            </table>
+    `;
 }
 
 class Table {
