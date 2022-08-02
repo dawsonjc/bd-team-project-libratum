@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class Test {
 
-    @RequestMapping(value = "/eror")
+    @RequestMapping(value = "/myerror")
     public String errorPage() {
-        return "This is a big errogr pae";
+        return "This is a big error page";
     }
 }
