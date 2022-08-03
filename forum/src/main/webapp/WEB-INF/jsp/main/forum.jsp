@@ -26,12 +26,12 @@
 
 <script type="text/javascript">
     function validate() {
-        let valid = Boolean(<%= (currentUser == null) %>);
-        if(valid) {
+        let invalid = Boolean(<%= (currentUser == null) %>);
+        if(invalid) {
             alert("You need to login to post!");
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
 </script>
 
