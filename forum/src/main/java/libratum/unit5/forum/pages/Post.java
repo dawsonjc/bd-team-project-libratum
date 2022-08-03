@@ -6,17 +6,22 @@ import daos.UsersDAO;
 import libratum.unit5.forum.ForumApplication;
 import models.PostThread;
 import models.Users;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.Date;
 
 @Controller
 @RequestMapping(value = "/thread")
 public class Post {
+
+    @Autowired
+    HttpServletRequest request;
 
     private final PostDAO dao = new PostDAO(ForumApplication.getDB());
     private final PostThreadDAO postThreadDAO = new PostThreadDAO(ForumApplication.getDB());
@@ -41,7 +46,7 @@ public class Post {
                                                   @RequestParam("postId") String postId) {
         PostThread thread = (PostThread) model.getAttribute("PostThread");
 
-        Users currentUser = (Users) model.getAttribute("current_user");
+        Users currentUser = (Users) request.getSession().getAttribute("current_user");
 
         if(thread == null) {
             throw new exceptions.PostNotFoundException();
@@ -51,8 +56,7 @@ public class Post {
         }
 
         models.Post post = new models.Post(
-                this.dao.findById(postId),
-                thread,
+                "thread",
                 currentUser,
                 content,
                 new java.util.Date(),
@@ -76,7 +80,7 @@ public class Post {
             @RequestParam(value = "title") String title,
             @RequestParam(value = "post_content") String postContent
     ) {
-        Users user = (Users) model.getAttribute("current_user");
+        Users user = (Users) request.getSession().getAttribute("current_user");
         System.out.println(user);
         System.out.println(title);
         System.out.println(postContent);
@@ -85,8 +89,7 @@ public class Post {
         thread.setTitle(title);
 
         models.Post post = new models.Post();
-        post.setParentPost(null);
-        post.setPostThread(thread);
+        post.setPostThread("thread");
         post.setFromUser(user);
         post.setContent(postContent);
         post.setDate(new Date());

@@ -16,6 +16,8 @@
     }
 
     PostThreadDAO dao = (PostThreadDAO) request.getAttribute("dao");
+
+    out.println(dao);
 %>
 
 <!DOCTYPE html>
@@ -25,13 +27,18 @@
 <body>
 
 <script type="text/javascript">
+    <% if(currentUser != null) {%>
+    const user = <%= currentUser.toJSObject() %>
+    <%}%>
+
+
     function validate() {
-        let valid = Boolean(<%= (currentUser == null) %>);
-        if(valid) {
+        let invalid = Boolean(<%= (currentUser == null) %>);
+        if(invalid) {
             alert("You need to login to post!");
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
 </script>
 

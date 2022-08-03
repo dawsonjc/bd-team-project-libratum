@@ -37,6 +37,7 @@ public class UsersDAO {
     // Read
 
     public Users findByUsername(String username) {
+
         return dynamoDBMapper.load(Users.class, username);
     }
 

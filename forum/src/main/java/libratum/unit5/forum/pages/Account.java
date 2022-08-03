@@ -7,13 +7,16 @@ import models.UserType;
 import models.Users;
 import models.converter.ConverterForUser;
 import models.converter.ListConverterForPost;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 
 @Controller
@@ -21,6 +24,9 @@ import java.util.ArrayList;
 public class Account {
 
     private final UsersDAO dao = new UsersDAO(ForumApplication.getDB());
+
+    @Autowired
+    HttpServletRequest request;
 
     @RequestMapping(value="registration")
     public String accountPage(Model model) {
@@ -43,21 +49,28 @@ public class Account {
         user.setBio("");
 
         this.dao.saveUser(user);
-
+        request.getSession().setAttribute("current_user", user);
         redirectAttributes.addFlashAttribute("current_user", user);
         return "redirect:/account";
     }
 
-    @PostMapping(value = "login")
+    @GetMapping(value = "login")
     public String loginUser(Model model,
                             @ModelAttribute(value = "login_user") Users userToLogin
     ) {
         // id = null, username = "burghurgle", password = "asdf", etc = null;
         // SELECT COUNT(*) FROM user_table WHERE username = aklsjdf AND password = "asdfasdf";
 
-        Users user = this.dao.findByUsername(userToLogin.getUsername());
+        System.out.println("Trying to find user with: " + userToLogin);
 
-        if(!user.equals(userToLogin)) {
+        UsersDAO dao1 = new UsersDAO(ForumApplication.getDB());
+
+        Users user = dao1.findByUsername(userToLogin.getUsername());
+
+        System.out.println("Found user with: " + user);
+
+        if(user == null || !user.equals(userToLogin)) {
+            request.getSession().setAttribute("current_user", user);
             return "redirect:/account/registration";
         }
 
