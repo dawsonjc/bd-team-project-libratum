@@ -51,7 +51,7 @@ public class Post {
         }
 
         models.Post post = new models.Post(
-                thread,
+                "thread",
                 currentUser,
                 content,
                 new java.util.Date(),
@@ -84,7 +84,7 @@ public class Post {
         thread.setTitle(title);
 
         models.Post post = new models.Post();
-        post.setPostThread(thread);
+        post.setPostThread("thread");
         post.setFromUser(user);
         post.setContent(postContent);
         post.setDate(new Date());

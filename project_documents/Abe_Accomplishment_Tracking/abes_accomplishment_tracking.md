@@ -96,11 +96,19 @@ How a repository class is set up in springboot.
 
 Try to finish up getting the front end working.
 
+Implement a Like button on the posts.
 
 
 **Activity:**
-learning 
+
+learning javascript
+
+finishing up project in prep for presentation
 
 **Important Docs, Commits, or Code Reviews**:
 
 **Things learned:**
+
+Javascript
+
+more html

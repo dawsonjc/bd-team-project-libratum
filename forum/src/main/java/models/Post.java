@@ -104,7 +104,6 @@ public class Post {
 
     public void reply(Post post) {
         post.postThreadId = this.postThreadId;
-        this.postThread.addPost(post);
         //this.fromUser.getPosts().add(post);
     }
 
