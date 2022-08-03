@@ -36,7 +36,7 @@
 
         <!-- Login -->
         <td>
-            <form:form action="${pageContext.request.contextPath}/account/login" method="post" modelAttribute="login_user">
+            <form:form action="${pageContext.request.contextPath}/account/login" method="get" modelAttribute="login_user">
                 <form:label path="username">Username</form:label>
                 <form:input path="username" placeholder="username"/>
 

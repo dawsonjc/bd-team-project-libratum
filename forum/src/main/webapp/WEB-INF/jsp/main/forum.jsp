@@ -16,6 +16,8 @@
     }
 
     PostThreadDAO dao = (PostThreadDAO) request.getAttribute("dao");
+
+    out.println(dao);
 %>
 
 <!DOCTYPE html>
@@ -25,6 +27,11 @@
 <body>
 
 <script type="text/javascript">
+    <% if(currentUser != null) {%>
+    const user = <%= currentUser.toJSObject() %>
+    <%}%>
+
+
     function validate() {
         let invalid = Boolean(<%= (currentUser == null) %>);
         if(invalid) {
