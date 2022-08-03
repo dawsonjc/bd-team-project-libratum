@@ -1,4 +1,4 @@
-# [Team name] Reflection
+# Libratum Reflection
 
 ## Instructions
 
@@ -20,21 +20,41 @@ presentation at the end of the unit.*
 Did your implementation need to change based on what you learned once you were
 underway? 
 
+We followed the bare bones of our design, but a lot of it changed as when we first started we hadn't learned much
+about the front end dev going in. It was a lot of touch and go figuring out how the front end work which lead to a
+lot of problems, some which we couldn't resolve.
+
+
 ## Project
 
 * How did you handle the ambiguity of defining your own project and user
   stories? What strategies did you use to decide on concrete work to do to
   satisfy your requirements?
+
+Coming up with the project and user stories wasn't too difficult. We basically came up with user stories about 
+a wine enthusiast would want to use our website than came up with goals of how to achieve those user stories.
+
 * How did you deal with getting stuck on a problem? What strategies did you
   employ to get yourself unblocked?
+
+We usually would meet up as a group to discuss problems we ran into. If we couldn't solve them in a group
+setting we as individuals would go and outside research on our own (i.e Youtube, forums etc...).
+
 * Did any of your commitments you made in your team charter help navigate a
   difficult decision, situation, or collaboration challenge? How?
+
+
 
 ## Scrum
 
 * What did you find to be the most valuable part of daily stand-ups? Is there
   anything you would want to do differently at stand-up to make it more useful
   to you?
+
+  The most beneficial part of daily stand-ups was seeing what everyone had a accomplished so we could know
+  how to move forward on the next step of the project. If there was one thing we would want to do differently it
+  would be by having a little bit of clearer goals of what each person was supposed to be doing.
+
 * Did you over or underestimate the work you could complete during your sprints?
   What have you learned that will help you better estimate work next time?
 
@@ -43,3 +63,7 @@ underway?
 * If you were to start this unit over again, what would you do differently? How
   do you see yourself applying that to your work in later units, the capstone,
   or your internship?
+
+  We would spend more time in the planning phase and actually figuring out what the front end is going to look like.
+  That was difficult to do on the first time around since we didn't have a proper understanding how the front end worked.
+  This will help us in the future with working on better time management to finish tasks on time.
