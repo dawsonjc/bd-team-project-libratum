@@ -19,20 +19,19 @@ We want you to see the full set of expectations for transparency’s sake.*
 
 |Deliverable                                                      |Due Date                  |Date Completed |URL                               |
 |---                                                              |---                       |---            |---                               |
-|Team name                                                        |Sprint 1 Module 1         |               |name:                             |
-|[Design Document - problem statement](design_document.md)        |Sprint 1 Module 2         |               |                                  |
-|[Team Charter](team_charter.md)                                  |Sprint 1 Modeul 3         |               |                                  |
-|[Design Document](design_document.md)                            |Sprint 1 Friday by 5pm    |               |                                  |
-|Project Completion (Feature Complete)                            |Sprint 3 Friday by 5pm    |               |                                  |
-|[Team Reflection](reflection.md)                                 |Sprint 4 Wednesday by 5PM |               |                                  |
-|[Accomplishment Tracking (person 1)](accomplishment_tracking.md) |Sprint 4 Wednesday by 5PM |               |                                  |
-|[Accomplishment Tracking (person 2)](accomplishment_tracking.md) |Sprint 4 Wednesday by 5PM |               |                                  |
-|[Accomplishment Tracking (person 3)](accomplishment_tracking.md) |Sprint 4 Wednesday by 5PM |               |                                  |
-|[Accomplishment Tracking (person 4)](accomplishment_tracking.md) |Sprint 4 Wednesday by 5PM |               |                                  |
-|Self Reflection (person 1)                        |Sprint 4 Wednesday by 5PM |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
-|Self Reflection (person 2)                        |Sprint 4 Wednesday by 5PM |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
-|Self Reflection (person 3)                        |Sprint 4 Wednesday by 5PM |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
-|Self Reflection (person 4)                        |Sprint 4 Wednesday by 5PM |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
+|Team name                                                        |Sprint 1 Module 1         | 07/13/2022              |name: Libratum                            |
+|[Design Document - problem statement](design_document.md)        |Sprint 1 Module 2         | 07/13/2022              | https://github.com/BloomTechBackend/bd-team-project-libratum/blob/main/project_documents/design_document.md#1-problem-statement                                 |
+|[Team Charter](team_charter.md)                                  |Sprint 1 Module 3         | 07/13/2022              | https://github.com/BloomTechBackend/bd-team-project-libratum/blob/main/project_documents/team_charter.md                                 |
+|[Design Document](design_document.md)                            |Sprint 1 Friday by 5pm    | 07/15/2022              | https://github.com/BloomTechBackend/bd-team-project-libratum/blob/main/project_documents/design_document.md                                 |
+|Project Completion (Feature Complete)                            |Sprint 3 Friday by 5pm    | 07/29/2022              | https://github.com/BloomTechBackend/bd-team-project-libratum                                 |
+|[Team Reflection](Libratum%20Reflection/reflection.md)                                 |Sprint 4 Wednesday by 5PM | 08/03/2022              |                                  |
+|[Accomplishment Tracking (Dawson Chatfield)](accomplishment_tracking.md) |Sprint 4 Wednesday by 5PM | 08/03/2022              |                                  |
+|[Accomplishment Tracking (Abraham Kalovsky)](accomplishment_tracking.md) |Sprint 4 Wednesday by 5PM | 08/03/2022              | https://github.com/BloomTechBackend/bd-team-project-libratum/blob/main/project_documents/Abe_Accomplishment_Tracking/abes_accomplishment_tracking.md |
+|[Accomplishment Tracking (Jean Kubwayo)](accomplishment_tracking.md) |Sprint 4 Wednesday by 5PM | 08/03/2022              |                                  |
+|Self Reflection (person 1)                        |Sprint 4 Wednesday by 5PM | 08/03/2022              |n/a (will be submitted via Canvas - "Wrap-up" section) |
+|Self Reflection (person 2)                        |Sprint 4 Wednesday by 5PM | 08/03/2022              |n/a (will be submitted via Canvas - "Wrap-up" section) |
+|Self Reflection (person 3)                        |Sprint 4 Wednesday by 5PM | 08/03/2022              |n/a (will be submitted via Canvas - "Wrap-up" section) |
+|Self Reflection (person 4)                        |Sprint 4 Wednesday by 5PM | 08/03/2022              |n/a (will be submitted via Canvas - "Wrap-up" section) |
 
 ## Technical Learning Objectives
 
